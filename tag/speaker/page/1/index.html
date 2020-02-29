@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-3512a8e616b026f9a6c",applicationID:"576367860"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><meta name="viewport" content="width=device-width, initial-scale=1"><title>speaker – DJShot</title><link rel="dns-prefetch" href="//s.w.org"><link rel="stylesheet" id="wp-block-library-css" href="http:htttps://jerinjacob1999.github.io/DJShot/wp/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="edd-styles-css" href="http:htttps://jerinjacob1999.github.io/DJShot/content/plugins/easy-digital-downloads/templates/edd.min.css" type="text/css" media="all"><link rel="stylesheet" id="edd-free-downloads-css" href="http:htttps://jerinjacob1999.github.io/DJShot/content/plugins/edd-free-downloads/assets/css/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="vendd-style-css" href="http:htttps://jerinjacob1999.github.io/DJShot/content/themes/vendd/style.css" type="text/css" media="all"><link rel="stylesheet" id="vendd-fontawesome-css" href="http:htttps://jerinjacob1999.github.io/DJShot/content/themes/vendd/inc/fonts/font-awesome/css/font-awesome.min.css" type="text/css" media="all"><link rel="stylesheet" id="wpdreams-asl-basic-css" href="http:htttps://jerinjacob1999.github.io/DJShot/content/plugins/ajax-search-lite/css/style.basic.css" type="text/css" media="all"><link rel="stylesheet" id="wpdreams-ajaxsearchlite-css" href="http:htttps://jerinjacob1999.github.io/DJShot/content/plugins/ajax-search-lite/css/style-simple-blue.css" type="text/css" media="all"><script type="text/javascript" src="http:htttps://jerinjacob1999.github.io/DJShot/wp/wp-includes/js/jquery/jquery.js"></script><script type="text/javascript" src="http:htttps://jerinjacob1999.github.io/DJShot/wp/wp-includes/js/jquery/jquery-migrate.min.js"></script><script data-ad-client="ca-pub-2612222237551728" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style type="text/css">
+									</style><link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"><style type="text/css">
+                    <!--
+                    
+            @font-face {
+                font-family: 'aslsicons2';
+                src: url('htttps://jerinjacob1999.github.io/DJShot/content/plugins/ajax-search-lite/css/fonts/icons2.eot');
+                src: url('htttps://jerinjacob1999.github.io/DJShot/content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix') format('embedded-opentype'),
+                     url('htttps://jerinjacob1999.github.io/DJShot/content/plugins/ajax-search-lite/css/fonts/icons2.woff2') format('woff2'),
+                     url('htttps://jerinjacob1999.github.io/DJShot/content/plugins/ajax-search-lite/css/fonts/icons2.woff') format('woff'),
+                     url('htttps://jerinjacob1999.github.io/DJShot/content/plugins/ajax-search-lite/css/fonts/icons2.ttf') format('truetype'),
+                     url('htttps://jerinjacob1999.github.io/DJShot/content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+            div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label {
+                font-size: 0px !important;
+                color: rgba(0, 0, 0, 0);
+            }
+            div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label:after {
+                font-size: 11px !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            div[id*='ajaxsearchlite'].wpdreams_asl_container {
+                width: 100%;
+                margin: 0px 0px 0px 0px;
+            }
+            div[id*='ajaxsearchliteres'].wpdreams_asl_results div.resdrg span.highlighted {
+                font-weight: bold;
+                color: rgba(217, 49, 43, 1);
+                background-color: rgba(238, 238, 238, 1);
+            }
+            div[id*='ajaxsearchliteres'].wpdreams_asl_results .results div.asl_image {
+                width: 70px;
+                height: 70px;
+            }
+            div.asl_r .results {
+                max-height: none;
+            }
+                                -->
+                </style><script type="text/javascript">
+                if ( typeof _ASL !== "undefined" && _ASL !== null && typeof _ASL.initialize !== "undefined" )
+                    _ASL.initialize();
+            </script></head><body class="archive tag tag-speaker tag-322 vendd-full-width-html-structure vendd-pre-edd3">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	
+	<header id="masthead" class="site-header" role="banner"><div class="page-inner">
+			<div class="site-branding">
+				<span class="site-title">
+												<a href="http:htttps://jerinjacob1999.github.io/DJShot/" title="DJShot" rel="home">
+							DJShot							</a>
+											</span>
+									<h2 class="site-description">Download free musics and audio for youtube videos and for your personal use.</h2>
+					<div id="ajaxsearchlite1" class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+
+    
+    <div class="promagnifier">
+                <div class="innericon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path id="magnifier-2-icon" d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"></path></svg></div>
+    </div>
+
+    
+    
+    <div class="prosettings" style="display:none;" data-opened="0">
+                <div class="innericon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><polygon id="arrow-25-icon" transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "></polygon></svg></div>
+    </div>
+
+    
+    
+    <div class="proinput">
+        <form autocomplete="off" aria-label="Ajax search form">
+            <input aria-label="Search input" type="search" class="orig" name="phrase" placeholder="Search here.." value="" autocomplete="off"><input aria-label="Autocomplete input, do not use this" type="text" class="autocomplete" name="phrase" value="" autocomplete="off"><span class="loading"></span>
+            <input type="submit" value="Start search" style="width:0; height: 0; visibility: hidden;"></form>
+    </div>
+
+    
+    
+    <div class="proloading">
+
+        <div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+
+            </div>
+
+            <div class="proclose">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><polygon id="x-mark-icon" points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "></polygon></svg></div>
+    
+    
+</div>
+</div>
+
+
+<div id="ajaxsearchlitesettings1" class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+    <form name="options" autocomplete="off">
+
+        
+                <fieldset class="asl_sett_scroll"><legend style="display: none;">Generic selectors</legend>
+            <div class="asl_option_inner hiddend">
+                <input type="hidden" name="qtranslate_lang" id="qtranslate_lang" value="0"></div>
+
+	        
+            
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="checked" id="set_exactonly1" title="Exact matches only" name="set_exactonly"><label for="set_exactonly1">Exact matches only</label>
+                </div>
+                <div class="asl_option_label">
+                    Exact matches only                </div>
+            </div>
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_intitle1" title="Search in title" name="set_intitle" checked><label for="set_intitle1">Search in title</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in title                </div>
+            </div>
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_incontent1" title="Search in content" name="set_incontent" checked><label for="set_incontent1">Search in content</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in content                </div>
+            </div>
+            <div class="asl_option_inner hiddend">
+                <input type="checkbox" value="None" id="set_inexcerpt1" title="Search in excerpt" name="set_inexcerpt" checked><label for="set_inexcerpt1">Search in excerpt</label>
+            </div>
+
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_inposts1" title="Search in posts" name="set_inposts" checked><label for="set_inposts1">Search in posts</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in posts                </div>
+            </div>
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_inpages1" title="Search in pages" name="set_inpages" checked><label for="set_inpages1">Search in pages</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in pages                </div>
+            </div>
+                    </fieldset><div class="asl_option_inner hiddend">
+                <input type="checkbox" value="download" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked><label for="1customset_11">Hidden</label>
+            </div>
+            <div class="asl_option_label hiddend"></div>
+
+                        </form>
+</div>
+
+<div id="ajaxsearchliteres1" class="vertical wpdreams_asl_results asl_w asl_r asl_r_1">
+
+    
+    <div class="results">
+
+        
+            <div class="resdrg">
+            </div>
+
+        
+    </div>
+
+    
+    
+</div>
+
+    <div id="asl_hidden_data">
+        <svg style="position:absolute" height="0" width="0"><filter id="aslblur"><fegaussianblur in="SourceGraphic" stddeviation="4"></fegaussianblur></filter></svg><svg style="position:absolute" height="0" width="0"><filter id="no_aslblur"></filter></svg></div>
+
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ewogICAgImhvbWV1cmwiOiAiaHR0cDovL2Rqc2hvdC5oZXJva3VhcHAuY29tLyIsCiAgICAicmVzdWx0c3R5cGUiOiAidmVydGljYWwiLAogICAgInJlc3VsdHNwb3NpdGlvbiI6ICJob3ZlciIsCiAgICAiaXRlbXNjb3VudCI6IDQsCiAgICAiaW1hZ2V3aWR0aCI6IDcwLAogICAgImltYWdlaGVpZ2h0IjogNzAsCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwKICAgICJzaG93YXV0aG9yIjogMCwKICAgICJzaG93ZGF0ZSI6IDAsCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwKICAgICJjaGFyY291bnQiOiAgMCwKICAgICJkZWZhdWx0SW1hZ2UiOiAiaHR0cDovL2lvbWFsbHUuaGVyb2t1YXBwLmNvbS9jb250ZW50L3BsdWdpbnMvYWpheC1zZWFyY2gtbGl0ZS9pbWcvZGVmYXVsdC5qcGciLAogICAgImhpZ2hsaWdodCI6IDAsCiAgICAiaGlnaGxpZ2h0d2hvbGV3b3JkcyI6IDEsCiAgICAic2Nyb2xsVG9SZXN1bHRzIjogMCwKICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwKICAgICJhdXRvY29tcGxldGUiOiB7CiAgICAgICAgImVuYWJsZWQiIDogMSwKICAgICAgICAibGFuZyIgOiAiZW4iCiAgICB9LAogICAgInRyaWdnZXJvbnR5cGUiOiAxLAogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLAogICAgInRyaWdnZXJfb25fZmFjZXRfY2hhbmdlIjogMSwKICAgICJzZXR0aW5nc2ltYWdlcG9zIjogInJpZ2h0IiwKICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLAogICAgInZyZXN1bHRhbmltYXRpb24iOiAiZngtbm9uZSIsCiAgICAiaHJlc3VsdGhpZGVkZXNjIjogIjEiLAogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLAogICAgInBzaG93c3VidGl0bGUiOiAiMCIsCiAgICAicHNob3dkZXNjIjogIjEiLAogICAgImNsb3NlT25Eb2NDbGljayI6IDEsCiAgICAiaWlmTm9JbWFnZSI6ICJkZXNjcmlwdGlvbiIsCiAgICAiaWlSb3dzIjogMiwKICAgICJpaXRlbXNXaWR0aCI6IDIwMCwKICAgICJpaXRlbXNIZWlnaHQiOiAyMDAsCiAgICAiaWlzaG93T3ZlcmxheSI6IDEsCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsCiAgICAiaWloaWRlQ29udGVudCI6IDEsCiAgICAiaWlhbmltYXRpb24iOiAiMSIsCiAgICAiYW5hbHl0aWNzIjogMCwKICAgICJhbmFseXRpY3NTdHJpbmciOiAiIiwKICAgICJyZWRpcmVjdG9uY2xpY2siOiAxLAogICAgInJlZGlyZWN0Q2xpY2tUbyI6ICJyZXN1bHRzX3BhZ2UiLAogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsCiAgICAicmVkaXJlY3Rfb25fZW50ZXIiOiAxLAogICAgInJlZGlyZWN0RW50ZXJUbyI6ICJyZXN1bHRzX3BhZ2UiLAogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsCiAgICAicmVkaXJlY3RfdXJsIjogIj9zPXtwaHJhc2V9IiwKICAgICJvdmVycmlkZXdwZGVmYXVsdCI6IDAsCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCIKfQo="></div>
+				
+			</div>
+
+												<a href="http:htttps://jerinjacob1999.github.io/DJShot/checkout/" class="header-cart">
+						<i class="fa fa-shopping-cart"></i>
+						Cart total: <span class="header-cart-total">$0.00</span>					</a>
+							
+							<nav id="site-navigation" class="main-navigation" role="navigation"><span class="menu-toggle"><span class="vendd-menu-toggle-text">Menu</span><i class="fa fa-bars vendd-menu-icon"></i></span>
+					<div class="menu-topmenu-container"><ul id="menu-topmenu" class="clear nav-menu"><li id="menu-item-162" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-162"><a href="http://casagbic.com">Casagbic</a></li>
+<li id="menu-item-352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-352"><a href="http:htttps://jerinjacob1999.github.io/DJShot/">Free Download Awesome Audio’s</a></li>
+</ul></div>				</nav></div>
+
+	</header><div id="content" class="site-content">
+		<div class="page-inner">
+
+	<section id="primary" class="content-area"><main id="main" class="site-main" role="main"><header class="page-header"><h1 class="page-title">
+					speaker				</h1>
+							</header><article id="post-2" class="post-2 post type-post status-publish format-standard hentry category-uncategorized tag-art tag-artist tag-audio tag-bass tag-dj tag-event tag-hiphop tag-instagood tag-instagram tag-light tag-like tag-live tag-love tag-m tag-microphone tag-music tag-musica tag-musician tag-party tag-producer tag-rap tag-song tag-sound tag-soundcloud tag-soundengineer tag-soundsystem tag-speaker tag-studio tag-video"><header class="entry-header"><div class="entry-meta">
+				<span class="byline byline-item">
+		<i class="fa fa-pencil"></i>
+		<span class="author vcard"><a class="url fn n" href="http:htttps://jerinjacob1999.github.io/DJShot/author/jerinjacob/">jerinjacob</a></span>	</span>
+	<span class="posted-on byline-item">
+		<i class="fa fa-calendar"></i>
+		<a href="http:htttps://jerinjacob1999.github.io/DJShot/hello-world/" rel="bookmark"><time class="entry-date published" datetime="2020-02-21T12:25:53+05:30">02/21/2020</time><time class="updated" datetime="2020-02-21T15:14:27+05:30">02/21/2020</time></a>	</span>
+			<span class="comments-link byline-item"><i class="fa fa-comments"></i><a href="http:htttps://jerinjacob1999.github.io/DJShot/hello-world/#comments">1 Comment</a></span>
+			</div>
+			</header><div class="entry-summary">
+			
+	<footer class="entry-footer"><span class="tags-links">
+				<i class="fa fa-tags"></i>
+				<a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/art/" rel="tag">art</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/artist/" rel="tag">artist</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/audio/" rel="tag">audio</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/bass/" rel="tag">bass</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/dj/" rel="tag">dj</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/event/" rel="tag">event</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/hiphop/" rel="tag">hiphop</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/instagood/" rel="tag">instagood</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/instagram/" rel="tag">instagram</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/light/" rel="tag">light</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/like/" rel="tag">like</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/live/" rel="tag">live</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/love/" rel="tag">love</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/m/" rel="tag">m</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/microphone/" rel="tag">microphone</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/music/" rel="tag">music</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/musica/" rel="tag">musica</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/musician/" rel="tag">musician</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/party/" rel="tag">party</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/producer/" rel="tag">producer</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/rap/" rel="tag">rap</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/song/" rel="tag">song</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/sound/" rel="tag">sound</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/soundcloud/" rel="tag">soundcloud</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/soundengineer/" rel="tag">soundengineer</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/soundsystem/" rel="tag">soundsystem</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/speaker/" rel="tag">speaker</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/studio/" rel="tag">studio</a>, <a href="http:htttps://jerinjacob1999.github.io/DJShot/tag/video/" rel="tag">video</a>			</span>
+						</footer></div>
+	</article></main></section><div id="secondary" class="widget-area" role="complementary">
+
+	
+</div>
+		</div>
+	</div>
+
+	<footer id="colophon" class="site-footer" role="contentinfo"><div class="page-inner">
+			<div class="site-info">
+				Download free musics and audio for youtube videos and for your personal use. - DJShot © 2020			</div>
+		</div>
+	</footer></div>
+
+<div class="edd-free-downloads-modal-wrapper edd-free-downloads"><span class="edd-loading"></span><div id="edd-free-downloads-modal" style="display:none"></div></div><script type="text/javascript">
+/* <![CDATA[ */
+var edd_scripts = {"ajaxurl":"htttps:\/\/jerinjacob1999.github.io\/DJShot\/wp\/wp-admin\/admin-ajax.php","position_in_cart":"","has_purchase_links":"1","already_in_cart_message":"You have already added this item to your cart","empty_cart_message":"Your cart is empty","loading":"Loading","select_option":"Please select an option","is_checkout":"0","default_gateway":"","redirect_to_checkout":"0","checkout_page":"htttps:\/\/jerinjacob1999.github.io\/DJShot\/checkout\/","permalinks":"1","quantities_enabled":"","taxes_enabled":"0"};
+/* ]]> */
+</script><script type="text/javascript" src="http:htttps://jerinjacob1999.github.io/DJShot/content/plugins/easy-digital-downloads/assets/js/edd-ajax.min.js"></script><script type="text/javascript" src="http:htttps://jerinjacob1999.github.io/DJShot/content/plugins/edd-free-downloads/assets/js/isMobile.min.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var edd_free_downloads_vars = {"close_button":"box","user_registration":"false","require_name":"false","download_loading":"Please Wait... ","download_label":"Free Download","modal_download_label":"Download Now","has_ajax":"1","ajaxurl":"htttps:\/\/jerinjacob1999.github.io\/DJShot\/wp\/wp-admin\/admin-ajax.php","mobile_url":"\/tag\/speaker\/?edd-free-download=true","form_class":"edd_purchase_submit_wrapper","bypass_logged_in":"false","is_download":"false","edd_is_mobile":"","success_page":"htttps:\/\/jerinjacob1999.github.io\/DJShot\/checkout\/purchase-confirmation\/","guest_checkout_disabled":"","email_verification":"","on_complete_handler":"auto-download","on_complete_delay":"2000"};
+/* ]]> */
+</script><script type="text/javascript" src="http:htttps://jerinjacob1999.github.io/DJShot/content/plugins/edd-free-downloads/assets/js/edd-free-downloads.min.js"></script><script type="text/javascript" src="http:htttps://jerinjacob1999.github.io/DJShot/content/themes/vendd/inc/js/vendd-scripts.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var ajaxsearchlite = {"ajaxurl":"htttps:\/\/jerinjacob1999.github.io\/DJShot\/wp\/wp-admin\/admin-ajax.php","backend_ajaxurl":"htttps:\/\/jerinjacob1999.github.io\/DJShot\/wp\/wp-admin\/admin-ajax.php","js_scope":"jQuery"};
+var ASL = {"ajaxurl":"htttps:\/\/jerinjacob1999.github.io\/DJShot\/wp\/wp-admin\/admin-ajax.php","backend_ajaxurl":"htttps:\/\/jerinjacob1999.github.io\/DJShot\/wp\/wp-admin\/admin-ajax.php","js_scope":"jQuery","detect_ajax":"0","scrollbar":"1","js_retain_popstate":"0","version":"4737","fix_duplicates":"1"};
+/* ]]> */
+</script><script type="text/javascript" src="http:htttps://jerinjacob1999.github.io/DJShot/content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-3512a8e616b026f9a6c","applicationID":"576367860","transactionName":"NgBRMkEFWUJXBkxcWQ9KZhRaS15fUgBAG0YJFQ==","queueTime":1,"applicationTime":3,"atts":"GkdSRAkfSkw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>
